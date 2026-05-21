@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Semantic Research Navigator</title>
+    <meta name="description" content="An interactive research prototype for mapping literature review evidence into claims, methods, limitations, and synthesis themes.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Project navigation">
+        <a class="brand" href="#top" aria-label="Semantic Research Navigator home">
+          <span class="mark" aria-hidden="true">SRN</span>
+          <span>Semantic Research Navigator</span>
+        </a>
+        <div class="navlinks">
+          <a href="#artifact">Artifact</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#demo">Demo</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Research artifact prototype</p>
+          <h1>Map paper evidence into a defensible literature synthesis.</h1>
+          <p class="lede">
+            A compact AI-assisted workflow for turning paper notes into structured claims,
+            methods, limitations, and research gaps without losing the source trail.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#demo">Explore Demo</a>
+            <a class="button secondary" href="#artifact">Read Artifact</a>
+          </div>
+        </div>
+
+        <div class="signal-board" aria-label="Evidence map preview">
+          <div class="board-header">
+            <span>Evidence Map</span>
+            <strong id="confidenceScore">84%</strong>
+          </div>
+          <div class="node-grid">
+            <button class="node active" data-topic="methods">Methods</button>
+            <button class="node" data-topic="claims">Claims</button>
+            <button class="node" data-topic="limits">Limits</button>
+            <button class="node" data-topic="gaps">Gaps</button>
+          </div>
+          <div class="insight" id="insightText">
+            Current synthesis emphasizes transparent scoring and source-linked comparisons across papers.
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="artifact">
+        <div class="section-heading">
+          <p class="eyebrow">Artifact</p>
+          <h2>What the prototype demonstrates</h2>
+        </div>
+        <div class="artifact-grid">
+          <article>
+            <h3>Problem</h3>
+            <p>
+              Literature reviews are difficult because relevant evidence is scattered across PDFs,
+              highlights, and notes. The hardest part is not only summarizing papers, but preserving
+              enough structure to compare them responsibly.
+            </p>
+          </article>
+          <article>
+            <h3>Approach</h3>
+            <p>
+              The navigator represents each paper as an evidence card with fields for research claim,
+              method, limitation, and confidence. A synthesis layer groups related evidence into
+              themes and exposes weak spots before writing begins.
+            </p>
+          </article>
+          <article>
+            <h3>Contribution</h3>
+            <p>
+              The artifact shows how AI support can make research synthesis more traceable:
+              every generated theme should point back to specific evidence rather than becoming
+              a detached summary.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflow-band" id="workflow">
+        <div class="section-heading">
+          <p class="eyebrow">Workflow</p>
+          <h2>From question to synthesis</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>Frame the question</h3>
+              <p>Define the research topic, inclusion criteria, and what counts as useful evidence.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>Extract evidence</h3>
+              <p>Capture each paper's claim, method, dataset, limitation, and confidence level.</p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>Compare patterns</h3>
+              <p>Group related claims, separate strong evidence from weak evidence, and identify gaps.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h3>Write with traceability</h3>
+              <p>Generate a synthesis that remains grounded in the selected sources and limitations.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section demo-layout" id="demo">
+        <div class="demo-copy">
+          <p class="eyebrow">Interactive Demo</p>
+          <h2>Evidence card explorer</h2>
+          <p>
+            Select a research focus to update the paper cards and synthesis. The demo uses sample
+            entries to show the structure of the artifact.
+          </p>
+          <div class="controls" aria-label="Research focus selector">
+            <button class="chip selected" data-filter="traceability">Traceability</button>
+            <button class="chip" data-filter="ranking">Ranking</button>
+            <button class="chip" data-filter="gaps">Gap Finding</button>
+          </div>
+        </div>
+
+        <div class="demo-panel">
+          <div class="paper-card">
+            <div class="card-top">
+              <span id="paperTag">Focus: Traceability</span>
+              <strong id="paperScore">0.84</strong>
+            </div>
+            <h3 id="paperTitle">Source-linked synthesis</h3>
+            <p id="paperBody">
+              The strongest artifact claim is that summaries become more trustworthy when every theme
+              points back to the evidence cards that produced it.
+            </p>
+            <dl>
+              <div>
+                <dt>Method</dt>
+                <dd id="methodText">Evidence schema plus confidence scoring</dd>
+              </div>
+              <div>
+                <dt>Limitation</dt>
+                <dd id="limitText">Needs real corpus evaluation before research use</dd>
+              </div>
+            </dl>
+          </div>
+          <aside class="synthesis">
+            <h3>Generated Synthesis</h3>
+            <p id="synthesisText">
+              A responsible literature-review assistant should preserve the link between claims and
+              sources. The prototype therefore treats synthesis as a map of evidence, not just a
+              paragraph generator.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built by Farhan Khalid</span>
+      <span>Prototype artifact for AI-assisted research workflows</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
